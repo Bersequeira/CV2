@@ -1,0 +1,126 @@
+@import "../../app.scss";
+
+.portfolio {
+  position: relative;
+
+  .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: orange;
+    font-size: 2.25rem;
+
+    @include mobile {
+      padding-top: calc(100vh - 100px);
+      font-size: 1.5rem;
+    }
+
+    .progressBar {
+      height: 10px;
+      background-color: white;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      @include tablet {
+        padding: 0 2rem;
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      .imageContainer {
+        flex: 1;
+        height: 50%;
+
+        @include mobile {
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include mobile {
+          object-fit: contain;
+        }
+      }
+
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include tablet {
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+
+        @include mobile {
+          transform: none !important;
+          padding: 10px;
+          align-items: center;
+          text-align: center;
+        }
+
+        h2 {
+          font-size: 4.5rem;
+
+          @include mobile {
+            font-size: 2.25rem;
+          }
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.616);
+          font-size: 1.5rem;
+
+          @include mobile {
+            font-size: 1.1rem;
+          }
+        }
+
+        button {
+          width: 200px;
+          padding: 1rem;
+          border: thin solid white;
+          border-radius: 10px;
+          color: white;
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: transparent;
+          cursor: pointer;
+          transition: 0.2s ease;
+          &:hover {
+            color: rgb(0, 0, 0);
+            background-color: orange;
+          }
+        }
+      }
+    }
+  }
+}

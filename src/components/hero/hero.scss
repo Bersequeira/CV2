@@ -1,0 +1,134 @@
+@import "../../app.scss";
+
+.hero {
+  position: relative;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background-color: linear-gradient(180dg, #0c0c1d, #111132);
+
+  .wrapper {
+    max-width: 1336px;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      align-items: end;
+      padding: 2rem 1rem;
+    }
+
+    .textContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      @include tablet {
+        padding: 0 2rem;
+      }
+
+      @include mobile {
+        text-align: center;
+        gap: 15px;
+      }
+
+      h2 {
+        font-size: 2.4rem;
+        color: rgba(255, 166, 0, 0.902);
+        letter-spacing: 10px;
+
+        @include tablet {
+          font-size: 2rem;
+        }
+
+        @include mobile {
+          font-size: 1.8rem;
+        }
+      }
+
+      h1 {
+        font-size: 5rem;
+
+        @include tablet {
+          font-size: 3rem;
+        }
+
+        @include mobile {
+          font-size: 2.7rem;
+        }
+      }
+
+      .contactBtn {
+        z-index: 997;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.8rem;
+
+        @include tablet {
+          gap: 1rem;
+        }
+        @include mobile {
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        a {
+          padding: 1rem 2rem;
+          border: thin solid white;
+          border-radius: 0.5rem;
+          font-size: 1rem;
+          font-weight: bold;
+          color: white;
+          cursor: pointer;
+
+          &:hover {
+            background-color: orange;
+            color: black;
+          }
+        }
+      }
+
+      img {
+        width: 50px;
+
+        @include mobile {
+          margin: 0 auto;
+          width: 40px;
+        }
+      }
+    }
+
+    .imageContainer {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+        align-self: end;
+
+        @include tablet {
+          height: 50vh;
+        }
+
+        @include mobile {
+          height: 45vh;
+        }
+      }
+    }
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -120px;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    font-weight: bold;
+  }
+}
